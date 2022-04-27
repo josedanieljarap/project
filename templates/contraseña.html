@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Cambio de contraseña
+{% endblock %}
+
+{% block body %}
+
+    <main class="container-fluid py-5 text-center">
+        <form action="/contraseña" method="post">
+            <div class="mb-3">
+                <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="password" name="password" placeholder="New password" type="password">
+            </div>
+            <div class="mb-3">
+                <input class="form-control mx-auto w-auto" id="confirmation" name="confirmation" placeholder="New password (again)" type="password">
+            </div>
+            <button class="btn btn-dark" type="submit">Submit</button>
+        </form>
+    </main>
+{% endblock %}

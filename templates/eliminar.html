@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Eliminar
+{% endblock %}
+
+{% block body %}
+    <h3>
+        Eliminar datos de tabla:
+    </h3>
+
+    <form action="/eliminar" method="post">
+        <label>Ingrese el nombre del distrito que desea eliminar:</label>
+        <input autocomplete="off" autofocus name="distrito" placeholder="Distrito" type="text">
+        <br>
+        <br>
+        <label>Seleccione las tablas de donde desea eliminar:</label>
+        <input name="tabla" type="checkbox" value="mortalidad"> Tabla 1
+        <input name="tabla" type="checkbox" value="frecuencias_F1534C"> Tabla 2
+        <input name="tabla" type="checkbox" value="frecuencias_V419L"> Tabla 3
+        <br>
+        <br>
+        <input type="submit">
+    </form>
+
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Registrar
+{% endblock %}
+
+{% block body %}
+    <main class="container-fluid py-5 text-center">
+        <form action="/registrar" method="post">
+            <div class="mb-3">
+                <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="username" placeholder="Username" type="text">
+            </div>
+            <div class="mb-3">
+                <input autocomplete="off" class="form-control mx-auto w-auto" name="password" placeholder="Password" type="password">
+            </div>
+            <div class="mb-3">
+                <input autocomplete="off" class="form-control mx-auto w-auto" name="confirmation" placeholder="Password (again)" type="password">
+            </div>
+            <div class="mb-3">
+                <select class="form-select mx-auto w-auto" name="tipo">
+                <option disable selected>Tipo</option>
+                <option value="admin">Administrador</option>
+                <option value="user">Usuario</option>
+            </select>
+            </div>
+            <button class="btn btn-dark" type="submit">Registrar</button>
+        </form>
+    </main>
+{% endblock %}

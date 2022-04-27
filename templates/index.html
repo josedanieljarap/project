@@ -1,0 +1,158 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Inicio
+{% endblock %}
+
+{% block body %}
+    <p>
+        Acá mostraremos unas tablas con información obtenida de los distritos de
+        Trujillo y Florencia de Mora sobre los mosquitos del dengue:
+    </p>
+    <br>
+
+    <div>
+        <div>
+            <h4>Tabla 01: Mortalidad de adultos de Aedes aegypti despues de la exposición a dosis diagnóstico
+                0.721 ppm de insecticida deltametrina para el nivel de resistencia.
+            </h4>
+
+            <table class="table table-dark table-hover">
+                <thead>
+                    <tr>
+                        <th>POBLACIÓN</th>
+                        <th>TOTAL</th>
+                        <th>MUERTOS</th>
+                        <th>SOBREVIVIENTES</th>
+                        <th>% MORTALIDAD</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for row in table_1 %}
+                        <tr>
+                            <td>
+                                {{ row["poblacion"] }}
+                            </td>
+                            <td>
+                                {{ row["total"] }}
+                            </td>
+                            <td>
+                                {{ row["muertos"] }}
+                            </td>
+                            <td>
+                                {{ row["sobrevivientes"] }}
+                            </td>
+                            <td>
+                                {{ row["mortalidad"] | per }}
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
+        </div>
+        <br>
+        <br>
+        <div>
+            <h4>Tabla 02: Frecuencias alélicas y genotípicas de la mutación F1534C en poblaciones
+                de Trujillo y Florencia de Mora
+            </h4>
+
+            <table class="table table-dark table-hover">
+                <thead>
+                    <tr>
+                        <th>POBLACIÓN</th>
+                        <th>N</th>
+                        <th>FF</th>
+                        <th>FC</th>
+                        <th>CC</th>
+                        <th>p</th>
+                        <th>q</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for row in table_2 %}
+                        <tr>
+                            <td>
+                                {{ row["poblacion"] }}
+                            </td>
+                            <td>
+                                {{ row["N"] }}
+                            </td>
+                            <td>
+                                {{ row["FF"] }}
+                            </td>
+                            <td>
+                                {{ row["FC"] }}
+                            </td>
+                            <td>
+                                {{ row["CC"] }}
+                            </td>
+                            <td>
+                                {{ row["p"] | dec }}
+                            </td>
+                            <td>
+                                {{ row["q"] | dec }}
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <div>
+                N: número de mosquitos; FF: Homocigoto silvestre; FC: Heterocigoto; CC: Homocigoto mutado(resistente); p: frecuencia de alelo dominante; q: frecuencia de alelo rececivo
+            </div>
+        </div>
+        <br>
+        <br>
+        <div>
+            <h4>Tabla 03: Frecuencias alélicas y genotípicas de la mutación V419L en poblaciones
+                de Trujillo y Florencia de Mora
+            </h4>
+
+            <table class="table table-dark table-hover">
+                <thead>
+                    <tr>
+                        <th>POBLACIÓN</th>
+                        <th>N</th>
+                        <th>VV</th>
+                        <th>VL</th>
+                        <th>LL</th>
+                        <th>p</th>
+                        <th>q</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for row in table_3 %}
+                        <tr>
+                            <td>
+                                {{ row["poblacion"] }}
+                            </td>
+                            <td>
+                                {{ row["N"] }}
+                            </td>
+                            <td>
+                                {{ row["VV"] }}
+                            </td>
+                            <td>
+                                {{ row["VL"] }}
+                            </td>
+                            <td>
+                                {{ row["LL"] }}
+                            </td>
+                            <td>
+                                {{ row["p"] | dec }}
+                            </td>
+                            <td>
+                                {{ row["q"] | dec }}
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <div>
+                N: número de mosquitos; VV: Homocigoto silvestre; VL: Heterocigoto; LL: Homocigoto mutado(resistente); p: frecuencia de alelo dominante; q: frecuencia de alelo rececivo
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

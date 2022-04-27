@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Agregar datos
+{% endblock %}
+
+{% block body %}
+    <p>Seleccione el número de la tabla a la que desea agregar datos:</p>
+    <br>
+    <form action="/editar" method="post">
+        <select name="tabla">
+            <option disable selected>Tabla</option>
+            <option>Tabla 1</option>
+            <option>Tabla 2</option>
+            <option>Tabla 3</option>
+        </select>
+        <input type="submit">
+    </form>
+
+{% endblock %}

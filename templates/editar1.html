@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Agregar a Tabla 1
+{% endblock %}
+
+{% block body %}
+    <h3>
+        Agregar datos a tabla 1
+    </h3>
+
+    <form action="/editar1" method="post">
+        <label>Ingrese el nombre del distrito:</label>
+        <input autocomplete="off" autofocus name="distrito" placeholder="Distrito" type="text">
+        <br>
+        <br>
+        <label>Ingrese el número total de mosquitos:</label>
+        <input autocomplete="off" autofocus name="total" placeholder="Total" type="text">
+        <br>
+        <br>
+        <label>Ingrese el número de mosquitos muertos:</label>
+        <input autocomplete="off" autofocus name="muertos" placeholder="Muertos" type="text">
+        <br>
+        <br>
+        <input type="submit">
+    </form>
+
+{% endblock %}
